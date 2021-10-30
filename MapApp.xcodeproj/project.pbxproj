@@ -13,6 +13,7 @@
 		C6B0E4AC272D8EF20081A543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B0E4AA272D8EF20081A543 /* Main.storyboard */; };
 		C6B0E4AE272D8EF30081A543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6B0E4AD272D8EF30081A543 /* Assets.xcassets */; };
 		C6B0E4B1272D8EF30081A543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B0E4AF272D8EF30081A543 /* LaunchScreen.storyboard */; };
+		C6B0E4B9272D96CE0081A543 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0E4B8272D96CE0081A543 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C6B0E4AD272D8EF30081A543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6B0E4B0272D8EF30081A543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6B0E4B2272D8EF30081A543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6B0E4B8272D96CE0081A543 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				C6B0E4A4272D8EF20081A543 /* AppDelegate.swift */,
 				C6B0E4A6272D8EF20081A543 /* SceneDelegate.swift */,
 				C6B0E4A8272D8EF20081A543 /* ViewController.swift */,
+				C6B0E4B8272D96CE0081A543 /* Alert.swift */,
 				C6B0E4AA272D8EF20081A543 /* Main.storyboard */,
 				C6B0E4AD272D8EF30081A543 /* Assets.xcassets */,
 				C6B0E4AF272D8EF30081A543 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				C6B0E4A9272D8EF20081A543 /* ViewController.swift in Sources */,
 				C6B0E4A5272D8EF20081A543 /* AppDelegate.swift in Sources */,
+				C6B0E4B9272D96CE0081A543 /* Alert.swift in Sources */,
 				C6B0E4A7272D8EF20081A543 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
