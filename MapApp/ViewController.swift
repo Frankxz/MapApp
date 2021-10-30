@@ -17,10 +17,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var buildButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var distanceLabel: UILabel!
     private var annotationList = [MKPointAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         
         buildButton.isHidden = true
         resetButton.isHidden = true
@@ -37,11 +39,17 @@ class ViewController: UIViewController {
     }
     
     @objc func buildRoutes(){
-        print("Routes builded")
+        for index in 0...annotationList.count - 2 {
+            configureDirection(startPoint: annotationList[index].coordinate, endPoint: annotationList[index + 1].coordinate)
+        }
     }
     
     @objc func resetPoints(){
-        print("Points reseted")
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        annotationList.removeAll()
+        resetButton.isHidden = true
+        buildButton.isHidden = true
     }
     
 }
@@ -73,5 +81,54 @@ extension ViewController {
             
             mapView.showAnnotations(annotationList, animated: true)
         }
+    }
+}
+
+// MARK: - configuring directions
+extension ViewController {
+   
+    private func configureDirection(startPoint: CLLocationCoordinate2D, endPoint: CLLocationCoordinate2D){
+        
+        let startPoint = MKPlacemark(coordinate: startPoint)
+        let endPoint = MKPlacemark(coordinate: endPoint)
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: startPoint)
+        request.destination = MKMapItem(placemark: endPoint)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        
+        let direction = MKDirections(request: request)
+        direction.calculate { [self] response, error in
+            if let error = error {
+                print(error)
+                alertError(title: "Error", message: error.localizedDescription)
+                return
+            }
+            
+            guard let response = response else {
+                alertError(title: "Error", message: "Route not available")
+                return
+            }
+            
+            var distance: CLLocationDistance = .zero
+            
+            var optimalRoute = response.routes[0]
+            for route in response.routes {
+                optimalRoute = (route.distance < optimalRoute.distance) ? route : optimalRoute
+                distance += optimalRoute.distance
+            }
+            distanceLabel.text = "\(Double(distance))"
+            self.mapView.addOverlay(optimalRoute.polyline)
+        }
+    }
+}
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .orange
+        return renderer
     }
 }
