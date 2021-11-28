@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="upd-Fd-6cu">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="71" translatesAutoresizingMaskIntoConstraints="NO" id="R9u-pn-ijB">
-                                <rect key="frame" x="10" y="769" width="394" height="59"/>
+                                <rect key="frame" x="10" y="754" width="394" height="59"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3J-1R-xkg">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="59"/>
@@ -66,28 +66,40 @@
                                         </buttonConfiguration>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD2-H0-JZ7">
-                                <rect key="frame" x="0.0" y="728" width="414" height="27.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD2-H0-JZ7">
+                                <rect key="frame" x="20" y="71.5" width="374" height="0.0"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="upd-Fd-6cu" secondAttribute="trailing" id="QxE-tN-lKz"/>
-                            <constraint firstItem="yD2-H0-JZ7" firstAttribute="top" secondItem="upd-Fd-6cu" secondAttribute="bottom" id="Vd7-Qf-Bfr"/>
-                            <constraint firstItem="yD2-H0-JZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZjM-0n-y8x"/>
-                            <constraint firstItem="upd-Fd-6cu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="arv-sq-jhd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="R9u-pn-ijB" secondAttribute="bottom" constant="-15" id="dyB-c7-DiX"/>
-                            <constraint firstItem="upd-Fd-6cu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-88" id="jDv-69-cdS"/>
-                            <constraint firstItem="yD2-H0-JZ7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nmC-qC-nWX"/>
+                            <constraint firstItem="upd-Fd-6cu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5So-Go-UZ7"/>
+                            <constraint firstItem="upd-Fd-6cu" firstAttribute="top" secondItem="yD2-H0-JZ7" secondAttribute="bottom" constant="-71.5" id="BI0-26-6Rx"/>
+                            <constraint firstItem="R9u-pn-ijB" firstAttribute="top" secondItem="upd-Fd-6cu" secondAttribute="bottom" constant="-142" id="J0L-LC-oom"/>
+                            <constraint firstItem="yD2-H0-JZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KKM-HU-72L"/>
+                            <constraint firstItem="upd-Fd-6cu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RnI-wV-6IQ"/>
+                            <constraint firstAttribute="bottom" secondItem="upd-Fd-6cu" secondAttribute="bottom" id="Wdu-Ux-uVD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R9u-pn-ijB" secondAttribute="trailing" constant="10" id="pNJ-wW-Yhy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="upd-Fd-6cu" secondAttribute="bottom" constant="85" id="thK-9o-Ug3"/>
+                            <constraint firstItem="upd-Fd-6cu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rgk-o7-ZqQ"/>
                             <constraint firstItem="R9u-pn-ijB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wPG-eg-1vX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yD2-H0-JZ7" secondAttribute="trailing" constant="20" id="x40-XU-PVA"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

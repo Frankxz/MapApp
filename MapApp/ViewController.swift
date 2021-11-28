@@ -50,6 +50,7 @@ class ViewController: UIViewController {
         annotationList.removeAll()
         resetButton.isHidden = true
         buildButton.isHidden = true
+        distanceLabel.text = ""
     }
     
 }
@@ -118,7 +119,7 @@ extension ViewController {
                 optimalRoute = (route.distance < optimalRoute.distance) ? route : optimalRoute
                 distance += optimalRoute.distance
             }
-            distanceLabel.text = "\(Double(distance))"
+            distanceLabel.text = "Distance: \(Double(distance)) m."
             self.mapView.addOverlay(optimalRoute.polyline)
         }
     }
@@ -128,7 +129,7 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = .orange
+        renderer.strokeColor = .yellow
         return renderer
     }
 }
