@@ -10,9 +10,9 @@ import MapKit
 import CoreLocation
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var mapView: MKMapView!
-   
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var buildButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
@@ -87,7 +87,7 @@ extension ViewController {
 
 // MARK: - configuring directions
 extension ViewController {
-   
+    
     private func configureDirection(startPoint: CLLocationCoordinate2D, endPoint: CLLocationCoordinate2D){
         
         let startPoint = MKPlacemark(coordinate: startPoint)
@@ -129,7 +129,7 @@ extension ViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
-        renderer.strokeColor = .yellow
+        renderer.strokeColor = .systemYellow
         return renderer
     }
 }
